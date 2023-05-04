@@ -1,0 +1,90 @@
+body{
+    background-image: url("../img/phpH1xFPj.svg");
+    background-size: 1920px 1080px;
+    background-repeat: no-repeat;
+}
+
+#input{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  padding: 10px 30px;
+  font-size: 10px;
+  border : 2px solid rgba(54, 41, 41, 0.55);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.startBtn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #70A65F;
+  padding: 10px 30px;
+  font-size: 30px;
+  border : 2px solid rgba(54, 41, 41, 0.55);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.8s;
+  color: #eeeed2;
+}
+
+.startBtn:hover{
+  background: #eeeed2;
+  color: #70A65F;
+}
+
+#board{
+  display: table;
+  position: relative;
+  margin-left: 40px;
+  margin-top: 90px;
+  width: 700px;
+  height: 700px;
+  border-radius: 20px;
+  border-spacing: 0;
+  box-shadow: 0 0 5px rgba(54, 41, 41, 0.55);
+}
+
+.row {
+  display: table-row;
+}
+
+.square {
+  display: table-cell;
+  width: 12.5%;
+  height: 12.5%;
+}
+
+
+#board .green{
+  background-color: #70A65F;
+}
+
+#board .white{
+  background-color: #eeeed2;
+}
+
+/* set border radius of the board to 10px  */
+#board .row:first-child .square:first-child {
+  border-top-left-radius: 20px;
+}
+
+#board .row:first-child .square:last-child {
+  border-top-right-radius: 20px;
+}
+
+#board .row:last-child .square:first-child {
+  border-bottom-left-radius: 20px;
+}
+
+#board .row:last-child .square:last-child {
+  border-bottom-right-radius: 20px;
+}
+
+img{
+  width: 80%;
+  height: 80%;
+}

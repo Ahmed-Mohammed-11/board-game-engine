@@ -1,0 +1,81 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #DBDFEA 50%, #ACB1D6 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+.content {
+    box-sizing: border-box;
+    left: 50%;
+    padding: 10vmin;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-family: monospace;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+
+.board {
+    width: 700px;
+    height: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #394867;
+    border: 5px solid #212A3E;
+
+}
+
+
+.board tr th .title {
+    border-radius: 50%;
+    border: 3px solid #212A3E;
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.board tr th .title {
+    margin-left: 2px;
+}
+
+.board tr th .title:hover {
+    background-color: #ff5555;
+    /* background-color: rgb(255, 216, 139); */
+}
