@@ -9,7 +9,6 @@ class Equeens extends GameEngine{
                 [0, 0, 0 , 0, 0 , 0, 0, 0],
                 [0, 0, 0 , 0, 0 , 0, 0, 0],
                 [0, 0, 0 , 0, 0 , 0, 0, 0],
-                [1]
         ]
         super(state);
     }
@@ -17,8 +16,6 @@ class Equeens extends GameEngine{
     drawer(state){
         let startButton = document.querySelector(".startBtn");
         startButton.style.display = "none";
-        // let playerTurn = document.querySelector(".player-turn");
-        // playerTurn.style.display = "block";
         let oldBoard = document.getElementById("board");
         if(oldBoard != null){
             document.body.removeChild(oldBoard);
@@ -32,7 +29,7 @@ class Equeens extends GameEngine{
             for(let j = 0 ; j < 8 ; j++){
                 let cell = document.createElement("div");
                 cell.classList.add("cell");
-                if((i + j) % 2 == 0){
+                if((i + j) % 2 === 0){
                     cell.classList.add("white");
                 }
                 else{
@@ -46,6 +43,7 @@ class Equeens extends GameEngine{
     }
 
     controller(state, input) {
+        //logic of 8 queens game
 
     }
 }

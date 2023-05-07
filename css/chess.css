@@ -29,10 +29,9 @@ body{
   font-size: 40px;
   width: 200px;
   height: 100px;
-  font-weight: bold;
   border : 2px solid rgba(54, 41, 41, 0.55);
   border-radius: 20px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Tahoma , Geneva, Verdana, sans-serif;
   cursor: pointer;
   transition: 0.5s;
 }
@@ -107,21 +106,8 @@ img{
   position: absolute;
   z-index:  999;
   margin-top: 380px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Tahoma , Geneva, Verdana, sans-serif;
   font-size: 30px;
   color: #999999;
   display: none;
-}
-
-.logo{
-    position: absolute;
-    letter-spacing: 3px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    bottom: 0;
-    left: 0;
-    padding: 10px 20px;
-    color: #999999;
-    font-size: 65px;
-    border-radius: 20px;
-    cursor: pointer;
 }
