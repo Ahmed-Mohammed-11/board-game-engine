@@ -57,9 +57,13 @@ equeens.onmouseout = function () {
   audio.pause();
 }
 
+
 chess.addEventListener('click', function () {
   window.location.href = 'chess.html';
 });
 
+connect4.addEventListener('click', function () {
+    window.location.href = 'connect4.html';
+});
 
 

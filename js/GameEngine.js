@@ -1,18 +1,24 @@
 class GameEngine {
-  update (state){
-    this.drawer(state);
-    setTimeout(()=> {
-        let input = prompt("Enter the input:" );
-        if(input === "exit"){return;}
-        console.log(input);
-        let result = this.controller(state , input )
-        console.log(result);
-        if(result.valid){this.drawer(result.state);}
-        else{console.log('not valid input');}
-        },0)
+  update (state) {
+      this.drawer(state);
+      setTimeout(() => {
+              let input = prompt("Enter the input:");
+              if(input === "exit"){
+                  return;
+              }
+              let result = this.controller(state, input);
+              if (result.valid) {
+                    this.drawer(state);
+              } else {
+                  console.log('not valid input');
+              }
+              this.update(state)
+      }, 100)
+
   }
   constructor(state) {
-    setInterval(this.update.bind(this , state) , 100);
+    // setInterval(this.update.bind(this , state) , 100);
+      this.update(state);
   }
   controller(state , input){}
   drawer(state){}

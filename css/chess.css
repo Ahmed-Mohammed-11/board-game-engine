@@ -1,5 +1,5 @@
 body{
-    background-image: url("../img/phpH1xFPj.svg");
+    background-image: url("../img/background.svg");
     background-size: 1920px 1080px;
     background-repeat: no-repeat;
 }
@@ -39,7 +39,7 @@ body{
 #board{
   display: table;
   position: relative;
-  margin-left: 40px;
+  margin-left: 30px;
   margin-top: 90px;
   width: 700px;
   height: 700px;
@@ -54,6 +54,7 @@ body{
 
 .square {
   display: table-cell;
+
   width: 12.5%;
   height: 12.5%;
 }
@@ -85,6 +86,7 @@ body{
 }
 
 img{
+  padding: 6px;
   width: 80%;
   height: 80%;
 }

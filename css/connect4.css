@@ -27,14 +27,25 @@ body {
     animation-duration: 5s;
 }
 
-.content {
-    box-sizing: border-box;
-    left: 50%;
-    padding: 10vmin;
-    position: fixed;
-    text-align: center;
+
+.startBtn{
+    position: absolute;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    background: #5C469C;
+    padding: 10px 30px;
+    font-size: 30px;
+    border : 2px solid rgba(54, 41, 41, 0.55);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: #FFF7D4;
+}
+
+.startBtn:hover{
+    background: #FFF7D4;
+    color: #5C469C;
 }
 
 h1 {
@@ -52,17 +63,36 @@ h1 {
 }
 
 
-.board {
+#board {
+    position: absolute;
+    border-collapse: collapse;
+    display: table;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 700px;
     height: 600px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     background-color: #394867;
-    border: 5px solid #212A3E;
+    border: 3px solid #212A3E;
 
 }
 
+.row {
+    display: table-row;
+}
 
-.board tr th .title {
+.cell{
+    padding: 5px;
+    display: table-cell;
+    width: 12.5%;
+    height: 12.5%;
+    background-color: #394867;
+    border: 3px solid #212A3E;
+}
+
+
+#board .row .cell .innerPlace {
     border-radius: 50%;
     border: 3px solid #212A3E;
     width: 90%;
@@ -71,11 +101,6 @@ h1 {
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.board tr th .title {
+#board .row .cell .innerPlace {
     margin-left: 2px;
-}
-
-.board tr th .title:hover {
-    background-color: #ff5555;
-    /* background-color: rgb(255, 216, 139); */
 }
