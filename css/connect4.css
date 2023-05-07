@@ -33,19 +33,25 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: monospace;
     background: #394867;
+    color: #DBDFEA;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.82);
     padding: 10px 30px;
-    font-size: 30px;
+    font-size: 40px;
+    width: 200px;
+    height: 100px;
+    font-weight: bold;
     border : 2px solid rgba(54, 41, 41, 0.55);
     border-radius: 20px;
     cursor: pointer;
     transition: 0.5s;
-    color: #FFF7D4;
 }
 
 .startBtn:hover{
-    background: #FFF7D4;
+    background: #DBDFEA;
     color: #394867;
+    box-shadow: inset 0 0  10px rgba(0, 0, 0, 0.88);
 }
 
 h1 {
@@ -97,7 +103,7 @@ h1 {
     width: 90%;
     height: 90%;
     background-color: white;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.81);
 }
 
 #board .row:first-child .cell:first-child {
@@ -119,4 +125,27 @@ h1 {
 
 #board .row .cell .innerPlace {
     margin-left: 2px;
+}
+
+.player-turn{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index:  999;
+    margin-top: 330px;
+    font-family: monospace;
+    font-size: 30px;
+    color: #394867;
+    display: none;
+}
+
+#who{
+    color: #f45050;
+    font-weight: bolder;
+    width: fit-content;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.81);
+    border-radius: 40%;
+    background-color: #50577A;
+
 }

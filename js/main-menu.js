@@ -66,4 +66,8 @@ connect4.addEventListener('click', function () {
     window.location.href = 'connect4.html';
 });
 
+equeens.addEventListener('click', function () {
+    window.location.href = 'equeens.html';
+});
+
 

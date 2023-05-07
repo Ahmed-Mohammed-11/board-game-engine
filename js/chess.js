@@ -8,7 +8,8 @@ class Chess extends GameEngine {
       ['0', '0', '0', '0', '0', '0', '0', '0'],
       ['0', '0', '0', '0', '0', '0', '0', '0'],
       ['white pawn', 'white pawn', 'white pawn', 'white pawn', 'white pawn', 'white pawn', 'white pawn', 'white pawn'],
-      ['white rook', 'white knight', 'white bishop', 'white queen', 'white king', 'white bishop', 'white knight', 'white rook']
+      ['white rook', 'white knight', 'white bishop', 'white queen', 'white king', 'white bishop', 'white knight', 'white rook'],
+      [1]
     ];
     console.log('chess constructor');
     super(state);
@@ -18,6 +19,8 @@ class Chess extends GameEngine {
   drawer(state) {
     let startButton = document.getElementsByClassName('startBtn');
     startButton[0].style.display = 'none';
+    let playerTurn = document.getElementsByClassName('player-turn');
+    playerTurn[0].style.display = 'block';
     let oldBoard = document.getElementById('board');
     if (oldBoard !== null) {
       document.body.removeChild(oldBoard);
@@ -67,11 +70,12 @@ class Chess extends GameEngine {
     let destinationRow = parseInt(input.split(" ")[1].split("")[0]);
     let destinationColumn = parseInt(input.split(" ")[1].split("")[1]);
     let currentPiece = state[sourceRow][sourceColumn];
-    console.log("current piece is -------> " + currentPiece);
+    let playerTurn = document.querySelector('.player-turn');
+
     let destinationPiece = state[destinationRow][destinationColumn];
     let valid = false;
     if (currentPiece !== '0') {
-      if (currentPiece.split(" ")[0] === "black") {
+      if (currentPiece.split(" ")[0] === "black" && state[8][0] === 1) {
         if (currentPiece.split(" ")[1] === "pawn") {
           if (destinationRow === sourceRow + 1 && destinationColumn === sourceColumn + 1 || destinationRow === sourceRow + 1 && destinationColumn === sourceColumn - 1) {
             if (destinationPiece.split(" ")[0] === "white") {
@@ -93,6 +97,7 @@ class Chess extends GameEngine {
               state[destinationRow][destinationColumn] = currentPiece;
               state[sourceRow][sourceColumn] = '0';
             } else if (destinationPiece.split(" ")[0] === "white") {
+              
               valid = true;
               state[destinationRow][destinationColumn] = currentPiece;
               state[sourceRow][sourceColumn] = '0';
@@ -163,7 +168,7 @@ class Chess extends GameEngine {
             }
           }
         }
-      } else if (currentPiece.split(" ")[0] === "white") {
+      } else if (currentPiece.split(" ")[0] === "white" && state[8][0] === 2) {
         if (currentPiece.split(" ")[1] === "pawn") {
           if (destinationRow === sourceRow - 1 && destinationColumn === sourceColumn + 1 || destinationRow === sourceRow - 1 && destinationColumn === sourceColumn - 1) {
             if (destinationPiece.split(" ")[0] === "black") {
@@ -256,7 +261,15 @@ class Chess extends GameEngine {
           }
         }
       }
-    }return {
+    }
+    if(valid === true && state[8][0] === 1){
+        state[8][0] = 2;
+        playerTurn.innerHTML = "White's Turn";
+    }else if(valid === true && state[8][0] === 2){
+        state[8][0] = 1;
+        playerTurn.innerHTML = "Black's Turn";
+    }
+    return {
         valid: valid,
         state: state
     };

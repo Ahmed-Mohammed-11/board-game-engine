@@ -7,8 +7,8 @@ body{
 
 #input{
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: 0;
+  left: 0;
   padding: 10px 30px;
   font-size: 10px;
   border : 2px solid rgba(54, 41, 41, 0.55);
@@ -32,6 +32,7 @@ body{
   font-weight: bold;
   border : 2px solid rgba(54, 41, 41, 0.55);
   border-radius: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   cursor: pointer;
   transition: 0.5s;
 }
@@ -74,6 +75,7 @@ body{
 
 #board .white{
   background-color: #d0d0d0;
+  box-shadow: inset 0 0  15px rgba(0, 0, 0, 0.5);
 }
 
 #board .row:first-child .square:first-child {
@@ -98,10 +100,23 @@ img{
   height: 80%;
 }
 
+.player-turn{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index:  999;
+  margin-top: 380px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 30px;
+  color: #999999;
+  display: none;
+}
 
 .logo{
     position: absolute;
     letter-spacing: 3px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     bottom: 0;
     left: 0;
     padding: 10px 20px;
