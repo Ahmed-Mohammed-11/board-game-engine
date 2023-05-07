@@ -1,6 +1,7 @@
 body{
-    background-image: url("../img/background.svg");
-    background-size: 1920px 1080px;
+    background-image: url("../img/bec65685-c87b-446a-b032-d729463ccac0.jpg");
+    width: 100%;
+    height: 100%;
     background-repeat: no-repeat;
 }
 
@@ -21,29 +22,36 @@ body{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #70A65F;
+  background: #5F7161;
+  color: #d0d0d0;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.82);
   padding: 10px 30px;
-  font-size: 30px;
+  font-size: 40px;
+  width: 200px;
+  height: 100px;
+  font-weight: bold;
   border : 2px solid rgba(54, 41, 41, 0.55);
   border-radius: 20px;
   cursor: pointer;
-  transition: 0.8s;
-  color: #eeeed2;
+  transition: 0.5s;
 }
 
 .startBtn:hover{
-  background: #eeeed2;
-  color: #70A65F;
+  background: #d0d0d0;
+  color: #5F7161;
+  box-shadow: inset 0 0  20px rgba(0, 0, 0, 0.96);
 }
 
 #board{
   display: table;
-  position: relative;
-  margin-left: 30px;
-  margin-top: 90px;
-  width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: 15px;
+  transform: translate(-50%, -50%);
+  width: 720px;
   height: 700px;
-  border-radius: 20px;
+  border-radius: 10px;
   border-spacing: 0;
   box-shadow: 0 0 5px rgba(54, 41, 41, 0.55);
 }
@@ -54,39 +62,51 @@ body{
 
 .square {
   display: table-cell;
-
   width: 12.5%;
   height: 12.5%;
 }
 
 
 #board .green{
-  background-color: #70A65F;
+  background: #5F7161;
+  box-shadow: inset 0 0  15px rgba(0, 0, 0, 0.5);
 }
 
 #board .white{
-  background-color: #eeeed2;
+  background-color: #d0d0d0;
 }
 
-/* set border radius of the board to 10px  */
 #board .row:first-child .square:first-child {
-  border-top-left-radius: 20px;
+  border-top-left-radius: 10px;
 }
 
 #board .row:first-child .square:last-child {
-  border-top-right-radius: 20px;
+  border-top-right-radius: 10px;
 }
 
 #board .row:last-child .square:first-child {
-  border-bottom-left-radius: 20px;
+  border-bottom-left-radius: 10px;
 }
 
 #board .row:last-child .square:last-child {
-  border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 10px;
 }
 
 img{
   padding: 6px;
   width: 80%;
   height: 80%;
+}
+
+
+.logo{
+    position: absolute;
+    letter-spacing: 3px;
+    bottom: 0;
+    left: 0;
+    padding: 10px 20px;
+    color: #999999;
+    font-size: 65px;
+    border-radius: 20px;
+    cursor: pointer;
 }
