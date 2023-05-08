@@ -1,5 +1,9 @@
 let welcome = document.querySelector('.welcome');
 let play = document.querySelector('.video-play-button');
+let audio = document.createElement('audio');
+audio.src = "../audio/click-button-140881.mp3"
+document.body.appendChild(audio);
+
 
 let i = 0;
 let txt = 'Welcome to Board Games!';
@@ -15,6 +19,15 @@ function typeWriter() {
 
 welcome.addEventListener('load',typeWriter());
 
+play.onmouseover = function () {
+    //play till end
+    audio.currentTime = 0;
+    audio.play();
+}
+
 play.addEventListener('click', function () {
+    audio.currentTime = 0;
+    audio.play();
     window.location.href = 'index.html';
 });
+

@@ -7,58 +7,44 @@ let sudoku = document.getElementById('Sudoku');
 let equeens = document.getElementById('8-Queens');
 let audio = document.createElement('audio');
 
-// audio.src = "../audio/one_beep-99630.mp3"
-// document.body.appendChild(audio);
+audio.src = "../audio/click-button-140881.mp3"
+document.body.appendChild(audio);
 
 
-checkers.onmouseover = function () {
-  //play till end
+checkers.onclick = function () {
   audio.currentTime = 0;
   audio.play();
 }
-checkers.onmouseout = function () {
-  audio.pause();
-}
-chess.onmouseover = function () {
-  //play till end
+
+chess.onclick = function () {
   audio.currentTime = 0;
   audio.play();
 }
-chess.onmouseout = function () {
-  audio.pause();
-}
-connect4.onmouseover = function () {
-  //play till end
+
+connect4.onclick = function () {
+  
   audio.currentTime = 0;
   audio.play();
 }
-connect4.onmouseout = function () {
-  audio.pause();
-}
-ticTacToe.onmouseover = function () {
-  //play till end
+
+ticTacToe.onclick = function () {
+  
   audio.currentTime = 0;
   audio.play();
 }
-ticTacToe.onmouseout = function () {
-  audio.pause();
-}
-sudoku.onmouseover = function () {
-  //play till end
+
+sudoku.onclick = function () {
+  
   audio.currentTime = 0;
   audio.play();
 }
-sudoku.onmouseout = function () {
-  audio.pause();
-}
-equeens.onmouseover = function () {
-  //play till end
+
+equeens.onclick = function () {
+  
   audio.currentTime = 0;
   audio.play();
 }
-equeens.onmouseout = function () {
-  audio.pause();
-}
+
 
 
 
