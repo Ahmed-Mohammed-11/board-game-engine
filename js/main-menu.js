@@ -6,8 +6,11 @@ let ticTacToe = document.getElementById('Tic-Tac-Toe');
 let sudoku = document.getElementById('Sudoku');
 let equeens = document.getElementById('8-Queens');
 let audio = document.createElement('audio');
+
 // audio.src = "../audio/one_beep-99630.mp3"
-document.body.appendChild(audio);
+// document.body.appendChild(audio);
+
+
 checkers.onmouseover = function () {
   //play till end
   audio.currentTime = 0;
