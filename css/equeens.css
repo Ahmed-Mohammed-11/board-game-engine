@@ -45,6 +45,8 @@ body{
 
 }
 
+
+
 .row {
     display: table-row;
 }
@@ -81,6 +83,7 @@ body{
 }
 
 img {
+    padding-top: 5px;
     width: 80%;
     height: 80%;
 }
