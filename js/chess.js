@@ -91,16 +91,49 @@ class Chess extends GameEngine {
             }
           }
         } else if (currentPiece.split(" ")[1] === "rook") {
-          if (destinationRow === sourceRow || destinationColumn === sourceColumn) {
-            if (destinationPiece === '0') {
-              valid = true;
-              state[destinationRow][destinationColumn] = currentPiece;
-              state[sourceRow][sourceColumn] = '0';
-            } else if (destinationPiece.split(" ")[0] === "white") {
-              
-              valid = true;
-              state[destinationRow][destinationColumn] = currentPiece;
-              state[sourceRow][sourceColumn] = '0';
+          if (destinationRow === sourceRow) {
+            let tmp = true;
+            let colDir = destinationColumn - sourceColumn > 0 ? 1 : -1;
+            let col = sourceColumn + colDir;
+            while (col !== destinationColumn) {
+              if (state[sourceRow][col] !== '0') {
+                tmp = false;
+                break;
+              }
+              col += colDir;
+            }
+            if (tmp) {
+              if (destinationPiece === '0') {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              } else if (destinationPiece.split(" ")[0] === "white") {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              }
+            }
+          }else if (destinationColumn === sourceColumn){
+            let tmp = true;
+            let rowDir = destinationRow - sourceRow > 0 ? 1 : -1;
+            let row = sourceRow + rowDir;
+            while (row !== destinationRow) {
+              if (state[row][sourceColumn] !== '0') {
+                tmp = false;
+                break;
+              }
+              row += rowDir;
+            }
+            if (tmp) {
+              if (destinationPiece === '0') {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              } else if (destinationPiece.split(" ")[0] === "white") {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              }
             }
           }
         } else if (currentPiece.split(" ")[1] === "knight") {
@@ -184,17 +217,53 @@ class Chess extends GameEngine {
             }
           }
         } else if (currentPiece.split(" ")[1] === "rook") {
-          if (destinationRow === sourceRow || destinationColumn === sourceColumn) {
-            if (destinationPiece === '0') {
-              valid = true;
-              state[destinationRow][destinationColumn] = currentPiece;
-              state[sourceRow][sourceColumn] = '0';
-            } else if (destinationPiece.split(" ")[0] === "black") {
-              valid = true;
-              state[destinationRow][destinationColumn] = currentPiece;
-              state[sourceRow][sourceColumn] = '0';
+            //if the move is vertical
+            if (destinationRow === sourceRow) {
+                let tmp = true;
+                let colDir = destinationColumn - sourceColumn > 0 ? 1 : -1;
+                let col = sourceColumn + colDir;
+                while (col !== destinationColumn) {
+                    if (state[sourceRow][col] !== '0') {
+                    tmp = false;
+                    break;
+                    }
+                    col += colDir;
+                }
+                if (tmp) {
+                    if (destinationPiece === '0') {
+                    valid = true;
+                    state[destinationRow][destinationColumn] = currentPiece;
+                    state[sourceRow][sourceColumn] = '0';
+                    } else if (destinationPiece.split(" ")[0] === "black") {
+                    valid = true;
+                    state[destinationRow][destinationColumn] = currentPiece;
+                    state[sourceRow][sourceColumn] = '0';
+                    }
+                }
+            }else if (destinationColumn === sourceColumn){
+                let tmp = true;
+                let rowDir = destinationRow - sourceRow > 0 ? 1 : -1;
+                let row = sourceRow + rowDir;
+                while (row !== destinationRow) {
+                    if (state[row][sourceColumn] !== '0') {
+                    tmp = false;
+                    break;
+                    }
+                    row += rowDir;
+                }
+                if (tmp) {
+                    if (destinationPiece === '0') {
+                    valid = true;
+                    state[destinationRow][destinationColumn] = currentPiece;
+                    state[sourceRow][sourceColumn] = '0';
+                    } else if (destinationPiece.split(" ")[0] === "black") {
+                    valid = true;
+                    state[destinationRow][destinationColumn] = currentPiece;
+                    state[sourceRow][sourceColumn] = '0';
+                    }
+                }
             }
-          }
+
         } else if (currentPiece.split(" ")[1] === "knight") {
           if (destinationRow === sourceRow + 2 && destinationColumn === sourceColumn + 1 || destinationRow === sourceRow + 2 && destinationColumn === sourceColumn - 1 || destinationRow === sourceRow - 2 && destinationColumn === sourceColumn + 1 || destinationRow === sourceRow - 2 && destinationColumn === sourceColumn - 1 || destinationRow === sourceRow + 1 && destinationColumn === sourceColumn + 2 || destinationRow === sourceRow + 1 && destinationColumn === sourceColumn - 2 || destinationRow === sourceRow - 1 && destinationColumn === sourceColumn + 2 || destinationRow === sourceRow - 1 && destinationColumn === sourceColumn - 2) {
             if (destinationPiece === '0') {
