@@ -1,5 +1,6 @@
 body{
-    font-family: Varela , sans-serif;;
+    font-family: Varela , sans-serif;
+    font-weight: bold;
     background-image: url("../img/bec65685-c87b-446a-b032-d729463ccac0.jpg");
     width: 100%;
     height: 100%;
@@ -19,13 +20,14 @@ body{
 }
 
 .startBtn{
+  font-weight: bold;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #5F7161;
+  background: #57856c;
   color: #d0d0d0;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.82);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.45);
   padding: 10px 30px;
   font-size: 40px;
   width: 200px;
@@ -38,8 +40,8 @@ body{
 
 .startBtn:hover{
   background: #d0d0d0;
-  color: #5F7161;
-  box-shadow: inset 0 0  20px rgba(0, 0, 0, 0.96);
+  color: #57856c;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.45);
 }
 
 #board{
@@ -68,13 +70,13 @@ body{
 
 
 #board .green{
-  background: #5F7161;
-  box-shadow: inset 0 0  15px rgba(0, 0, 0, 0.5);
+  background: #57856c;
+  box-shadow: inset 0 0  10px rgba(0, 0, 0, 0.5);
 }
 
 #board .white{
   background-color: #d0d0d0;
-  box-shadow: inset 0 0  15px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0  10px rgba(0, 0, 0, 0.5);
 }
 
 #board .row:first-child .square:first-child {

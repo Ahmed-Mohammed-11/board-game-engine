@@ -2,14 +2,14 @@
 body{
     font-family: Varela , sans-serif;
     font-weight: bold;
-    background-image: url("../img/wallpaper.png");
+    background-image: url("../img/799052.png");
     background-repeat: no-repeat;
     background-size: 1920px 1080px;
 }
 
 h1{
     font-size: 5vh;
-    color: rgb(255, 255, 255);
+    color: #FCEDDB;
     position: absolute;
     margin: auto;
     top: 45%;
@@ -42,7 +42,7 @@ h1{
     display: block;
     width: 80px;
     height: 80px;
-    background: rgba(255, 255, 255, 0.82);
+    background: #FCEDDB;
     border-radius: 50%;
     animation: pulse-border 1500ms ease-out infinite;
 }
@@ -57,13 +57,13 @@ h1{
     display: block;
     width: 80px;
     height: 80px;
-    background: rgba(255, 255, 255, 0.67);
+    background: rgba(252, 237, 219, 0.63);
     border-radius: 50%;
     transition: all 200ms;
 }
 
 .video-play-button:hover:after {
-    background-color: rgb(255, 255, 255);
+    background-color: #FCEDDB;
 }
 
 .video-play-button img {

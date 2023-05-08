@@ -149,15 +149,75 @@ class Chess extends GameEngine {
             }
           }
         } else if (currentPiece.split(" ")[1] === "queen") {
-          if (destinationRow === sourceRow || destinationColumn === sourceColumn || destinationRow === sourceRow + 2 && destinationColumn === sourceColumn + 1 || destinationRow === sourceRow + 2 && destinationColumn === sourceColumn - 1 || destinationRow === sourceRow - 2 && destinationColumn === sourceColumn + 1 || destinationRow === sourceRow - 2 && destinationColumn === sourceColumn - 1 || destinationRow === sourceRow + 1 && destinationColumn === sourceColumn + 2 || destinationRow === sourceRow + 1 && destinationColumn === sourceColumn - 2 || destinationRow === sourceRow - 1 && destinationColumn === sourceColumn + 2 || destinationRow === sourceRow - 1 && destinationColumn === sourceColumn - 2) {
-            if (destinationPiece === '0') {
-              valid = true;
-              state[destinationRow][destinationColumn] = currentPiece;
-              state[sourceRow][sourceColumn] = '0';
-            } else if (destinationPiece.split(" ")[0] === "white") {
-              valid = true;
-              state[destinationRow][destinationColumn] = currentPiece;
-              state[sourceRow][sourceColumn] = '0';
+          //handle all movements possible
+          if (destinationRow === sourceRow) {
+            let tmp = true;
+            let colDir = destinationColumn - sourceColumn > 0 ? 1 : -1;
+            let col = sourceColumn + colDir;
+            while (col !== destinationColumn) {
+              if (state[sourceRow][col] !== '0') {
+                tmp = false;
+                break;
+              }
+              col += colDir;
+            }
+            if (tmp) {
+              if (destinationPiece === '0') {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              } else if (destinationPiece.split(" ")[0] === "white") {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              }
+            }
+          }else if(destinationColumn === sourceColumn){
+            let tmp = true;
+            let rowDir = destinationRow - sourceRow > 0 ? 1 : -1;
+            let row = sourceRow + rowDir;
+            while (row !== destinationRow) {
+              if (state[row][sourceColumn] !== '0') {
+                tmp = false;
+                break;
+              }
+              row += rowDir;
+            }
+            if (tmp) {
+              if (destinationPiece === '0') {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              } else if (destinationPiece.split(" ")[0] === "white") {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              }
+            }
+            }else if (Math.abs(destinationRow - sourceRow) === Math.abs(destinationColumn - sourceColumn)) {
+            let rowDir = destinationRow - sourceRow > 0 ? 1 : -1;
+            let colDir = destinationColumn - sourceColumn > 0 ? 1 : -1;
+            let row = sourceRow + rowDir;
+            let col = sourceColumn + colDir;
+            let tmp = true;
+            while (row !== destinationRow) {
+                if (state[row][col] !== '0') {
+                    tmp = false;
+                    break;
+                }
+                row += rowDir;
+                col += colDir;
+            }
+            if (tmp) {
+                if (destinationPiece === '0') {
+                    valid = true;
+                    state[destinationRow][destinationColumn] = currentPiece;
+                    state[sourceRow][sourceColumn] = '0';
+                } else if (destinationPiece.split(" ")[0] === "white") {
+                    valid = true;
+                    state[destinationRow][destinationColumn] = currentPiece;
+                    state[sourceRow][sourceColumn] = '0';
+                }
             }
           }
         } else if (currentPiece.split(" ")[1] === "king") {
@@ -277,29 +337,90 @@ class Chess extends GameEngine {
             }
           }
         } else if (currentPiece.split(" ")[1] === "queen") {
-          if (destinationRow === sourceRow || destinationColumn === sourceColumn || destinationRow === sourceRow + 2 && destinationColumn === sourceColumn + 1 || destinationRow === sourceRow + 2 && destinationColumn === sourceColumn - 1 || destinationRow === sourceRow - 2 && destinationColumn === sourceColumn + 1 || destinationRow === sourceRow - 2 && destinationColumn === sourceColumn - 1 || destinationRow === sourceRow + 1 && destinationColumn === sourceColumn + 2 || destinationRow === sourceRow + 1 && destinationColumn === sourceColumn - 2 || destinationRow === sourceRow - 1 && destinationColumn === sourceColumn + 2 || destinationRow === sourceRow - 1 && destinationColumn === sourceColumn - 2) {
-            if (destinationPiece === '0') {
-              valid = true;
-              state[destinationRow][destinationColumn] = currentPiece;
-              state[sourceRow][sourceColumn] = '0';
-            } else if (destinationPiece.split(" ")[0] === "black") {
-              valid = true;
-              state[destinationRow][destinationColumn] = currentPiece;
-              state[sourceRow][sourceColumn] = '0';
+          if (destinationRow === sourceRow) {
+            let tmp = true;
+            let colDir = destinationColumn - sourceColumn > 0 ? 1 : -1;
+            let col = sourceColumn + colDir;
+            while (col !== destinationColumn) {
+              if (state[sourceRow][col] !== '0') {
+                tmp = false;
+                break;
+              }
+              col += colDir;
+            }
+            if (tmp) {
+              if (destinationPiece === '0') {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              } else if (destinationPiece.split(" ")[0] === "black") {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              }
+            }
+          }else if(destinationColumn === sourceColumn){
+            let tmp = true;
+            let rowDir = destinationRow - sourceRow > 0 ? 1 : -1;
+            let row = sourceRow + rowDir;
+            while (row !== destinationRow) {
+              if (state[row][sourceColumn] !== '0') {
+                tmp = false;
+                break;
+              }
+              row += rowDir;
+            }
+            if (tmp) {
+              if (destinationPiece === '0') {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              } else if (destinationPiece.split(" ")[0] === "black") {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              }
+            }
+          }else if (Math.abs(destinationRow - sourceRow) === Math.abs(destinationColumn - sourceColumn)) {
+            let rowDir = destinationRow - sourceRow > 0 ? 1 : -1;
+            let colDir = destinationColumn - sourceColumn > 0 ? 1 : -1;
+            let row = sourceRow + rowDir;
+            let col = sourceColumn + colDir;
+            let tmp = true;
+            while (row !== destinationRow) {
+              if (state[row][col] !== '0') {
+                tmp = false;
+                break;
+              }
+              row += rowDir;
+              col += colDir;
+            }
+            if (tmp) {
+              if (destinationPiece === '0') {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              } else if (destinationPiece.split(" ")[0] === "black") {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              }
             }
           }
+
         } else if (currentPiece.split(" ")[1] === "king") {
-          if (destinationRow === sourceRow - 1 && destinationColumn === sourceColumn || destinationRow === sourceRow - 2 && destinationColumn === sourceColumn && sourceRow === 6) {
-            if (destinationPiece === '0') {
-              valid = true;
-              state[destinationRow][destinationColumn] = currentPiece;
-              state[sourceRow][sourceColumn] = '0';
-            } else if (destinationPiece.split(" ")[0] === "black") {
-              valid = true;
-              state[destinationRow][destinationColumn] = currentPiece;
-              state[sourceRow][sourceColumn] = '0';
+          //handle all king movements
+            if (destinationRow === sourceRow + 1 && destinationColumn === sourceColumn || destinationRow === sourceRow - 1 && destinationColumn === sourceColumn || destinationRow === sourceRow && destinationColumn === sourceColumn + 1 || destinationRow === sourceRow && destinationColumn === sourceColumn - 1 || destinationRow === sourceRow + 1 && destinationColumn === sourceColumn + 1 || destinationRow === sourceRow + 1 && destinationColumn === sourceColumn - 1 || destinationRow === sourceRow - 1 && destinationColumn === sourceColumn + 1 || destinationRow === sourceRow - 1 && destinationColumn === sourceColumn - 1) {
+              if (destinationPiece === '0') {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              } else if (destinationPiece.split(" ")[0] === "black") {
+                valid = true;
+                state[destinationRow][destinationColumn] = currentPiece;
+                state[sourceRow][sourceColumn] = '0';
+              }
             }
-          }
         } else if (currentPiece.split(" ")[1] === "bishop") {
           if (Math.abs(destinationRow - sourceRow) === Math.abs(destinationColumn - sourceColumn)) {
             let rowDir = destinationRow - sourceRow > 0 ? 1 : -1;

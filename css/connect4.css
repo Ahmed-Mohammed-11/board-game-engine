@@ -7,24 +7,26 @@ body {
     background-image: url("../img/wp6862336-clean-minimal-wallpapers.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    font-family: Varela , sans-serif;
+    font-weight: bold;
 }
 
 
 
 .startBtn{
     position: absolute;
+    font-family: Varela , sans-serif;
+    font-weight: bold;
+    font-size: 40px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: monospace;
     background: #394867;
     color: #DBDFEA;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.82);
     padding: 10px 30px;
-    font-size: 40px;
     width: 200px;
     height: 100px;
-    font-weight: bold;
     border : 2px solid rgba(54, 41, 41, 0.55);
     border-radius: 20px;
     cursor: pointer;
@@ -36,11 +38,6 @@ body {
     color: #394867;
     box-shadow: inset 0 0  10px rgba(0, 0, 0, 0.88);
 }
-
-h1 {
-    font-family: monospace;
-}
-
 
 #board {
     position: absolute;
@@ -107,7 +104,6 @@ h1 {
     position: absolute;
     z-index:  999;
     margin-top: 310px;
-    font-family: monospace;
     font-size: 30px;
     color: #ffffff;
     display: none;
@@ -115,11 +111,15 @@ h1 {
 
 #who{
     color: #f45050;
-    font-weight: bolder;
     width: fit-content;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.81);
     border-radius: 40%;
     background-color: #394867;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.81);
 
+}
+
+@font-face {
+    font-family: Varela;
+    src: url("../fonts/Varela_Round/VarelaRound-Regular.ttf");
 }
