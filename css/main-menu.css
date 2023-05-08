@@ -1,5 +1,6 @@
 body{
-    font-family: Monospaced, sans-serif;
+    font-family: Varela , sans-serif;
+    font-weight: bold;
     width: 100%;
     height: 100%;
 }
@@ -26,7 +27,7 @@ body{
 }
 
 #Checkers{
-    background-color: #B0DAFF;
+    background-color: #8294C4;
 }
 
 #Connect-4{
@@ -34,7 +35,7 @@ body{
 }
 
 #Tic-Tac-Toe{
-    background-color: #8294C4;
+    background-color: #B0DAFF;
 }
 
 #Sudoku{
@@ -60,7 +61,7 @@ img{
 p{
     display: none;
     font-size: 3vh;
-    color: rgb(19, 29, 42);
+    color: #181823;
 }
 
 .game-choice:hover p{
@@ -75,4 +76,15 @@ p{
     from { opacity: 0; }
     to   { opacity: 1; }
 
+}
+
+
+@font-face {
+    font-family: Varela;
+    src: url("../fonts/Varela_Round/VarelaRound-Regular.ttf");
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }

@@ -1,12 +1,12 @@
 
 let checkers = document.getElementById('Checkers');
-let chess = document.getElementById('Chess');
+let chess = document.querySelector('#Chess');
 let connect4 = document.getElementById('Connect-4');
 let ticTacToe = document.getElementById('Tic-Tac-Toe');
 let sudoku = document.getElementById('Sudoku');
 let equeens = document.getElementById('8-Queens');
 let audio = document.createElement('audio');
-audio.src = "../audio/one_beep-99630.mp3"
+// audio.src = "../audio/one_beep-99630.mp3"
 document.body.appendChild(audio);
 checkers.onmouseover = function () {
   //play till end
@@ -57,17 +57,5 @@ equeens.onmouseout = function () {
   audio.pause();
 }
 
-
-chess.addEventListener('click', function () {
-  window.location.href = 'chess.html';
-});
-
-connect4.addEventListener('click', function () {
-    window.location.href = 'connect4.html';
-});
-
-equeens.addEventListener('click', function () {
-    window.location.href = 'equeens.html';
-});
 
 
