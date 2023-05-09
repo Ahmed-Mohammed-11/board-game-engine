@@ -20,15 +20,15 @@ body{
 }
 
 #Chess{
-    background-color: #A0D8B3;
+    background-color: #57856c;
 }
 
 #Checkers{
-    background-color: #8294C4;
+    background-color: rgba(87, 66, 66, 0.8);
 }
 
 #Connect-4{
-    background-color: #E76161;
+    background-color: #4c608c;
 }
 
 #Tic-Tac-Toe{
@@ -36,12 +36,12 @@ body{
 }
 
 #Sudoku{
-    background-color: #F9D949;
+    background-color: #ffffff;
 }
 
 
 #EQueens{
-    background-color: #408E91;
+    background-color: #247379;
 }
 
 .image{

@@ -11,7 +11,6 @@ class Chess extends GameEngine {
       ['white rook', 'white knight', 'white bishop', 'white queen', 'white king', 'white bishop', 'white knight', 'white rook'],
       [1]
     ];
-    console.log('chess constructor');
     super(state);
 
   }
@@ -33,7 +32,6 @@ class Chess extends GameEngine {
       row.className = 'row';
       for (let j = 0; j < 8; j++) {
         if (state[i][j] !== '0') {
-          console.log(state[i][j]);
           let cell = document.createElement('div');
           cell.classList.add('square');
           let image = document.createElement('img');

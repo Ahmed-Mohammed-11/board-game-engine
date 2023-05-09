@@ -55,6 +55,9 @@ class Equeens extends GameEngine{
         let toDelete = input.split(" ")[2];
 
         if(toDelete === "delete" || toDelete === "Delete" || toDelete === "DELETE" || toDelete === "d" || toDelete === "D"){
+            if(state[row][col] === 0){
+                valid = false;
+            }
             state[row][col] = 0;
             return {
                 state: state,
@@ -62,8 +65,6 @@ class Equeens extends GameEngine{
             }
         }
 
-        console.log("row -> " + row);
-        console.log("col -> " + col);
         //check if there is a queen in the cell
         if(state[row][col] === 1){
             valid = false;

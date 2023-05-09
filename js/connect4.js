@@ -51,7 +51,6 @@ class Connect4 extends GameEngine{
         let row = parseInt(input.split(" ")[0]);
         let column = parseInt(input.split(" ")[1]);
         let playerTurn = document.querySelector("#who");
-        console.log(row, column);
         if(state[row][column] === 0) {
             if (row === 5 || state[row + 1][column] !== 0) {
                 if(state[6][0] === 1){
@@ -65,7 +64,6 @@ class Connect4 extends GameEngine{
                 }
                 valid = true;
                 state[6][0] = 3 - state[6][0];
-                console.log(state[6][0]);
             }
         }
 
