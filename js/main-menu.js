@@ -11,38 +11,50 @@ audio.src = "../audio/click-button-140881.mp3"
 document.body.appendChild(audio);
 
 
-checkers.onclick = function () {
-  audio.currentTime = 0;
-  audio.play();
-}
-
 chess.onclick = function () {
   audio.currentTime = 0;
   audio.play();
+  audio.currentTime = 0;
+}
+
+checkers.onclick = function () {
+  audio.currentTime = 0;
+  audio.play();
+  audio.currentTime = 0;
+
+
 }
 
 connect4.onclick = function () {
-  
   audio.currentTime = 0;
   audio.play();
-}
+  audio.currentTime = 0;
 
-ticTacToe.onclick = function () {
-  
-  audio.currentTime = 0;
-  audio.play();
-}
 
-sudoku.onclick = function () {
-  
-  audio.currentTime = 0;
-  audio.play();
 }
 
 equeens.onclick = function () {
-  
   audio.currentTime = 0;
   audio.play();
+  audio.currentTime = 0;
+
+
+}
+
+ticTacToe.onclick = function () {
+  audio.currentTime = 0;
+  audio.play();
+  audio.currentTime = 0;
+
+
+}
+
+sudoku.onclick = function () {
+  audio.currentTime = 0;
+  audio.play();
+  audio.currentTime = 0;
+
+
 }
 
 

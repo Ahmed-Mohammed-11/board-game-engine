@@ -1,7 +1,7 @@
 let welcome = document.querySelector('.welcome');
 let play = document.querySelector('.video-play-button');
 let audio = document.createElement('audio');
-audio.src = "../audio/click-button-140881.mp3"
+audio.src = "../audio/click-button-140881.mp3";
 document.body.appendChild(audio);
 
 
@@ -19,15 +19,11 @@ function typeWriter() {
 
 welcome.addEventListener('load',typeWriter());
 
-play.onmouseover = function () {
-    //play till end
-    audio.currentTime = 0;
-    audio.play();
-}
-
 play.addEventListener('click', function () {
     audio.currentTime = 0;
     audio.play();
+    audio.currentTime = 0;
+
     window.location.href = 'index.html';
 });
 
