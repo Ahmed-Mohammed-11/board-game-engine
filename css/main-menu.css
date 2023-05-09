@@ -24,11 +24,11 @@ body{
 }
 
 #Checkers{
-    background-color: rgba(87, 66, 66, 0.8);
+    background-color: #F4EEC0;
 }
 
 #Connect-4{
-    background-color: #4c608c;
+    background-color: #567189;
 }
 
 #Tic-Tac-Toe{
@@ -41,7 +41,7 @@ body{
 
 
 #EQueens{
-    background-color: #247379;
+    background-color: #5E6F64;
 }
 
 .image{
