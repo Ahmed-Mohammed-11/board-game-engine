@@ -13,7 +13,7 @@ class GameEngine {
                   console.log('not valid input');
               }
               this.update(state)
-      }, 100)
+      }, 500)
 
   }
   constructor(state) {
