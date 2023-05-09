@@ -22,8 +22,6 @@ welcome.addEventListener('load',typeWriter());
 play.addEventListener('click', function () {
     audio.currentTime = 0;
     audio.play();
-    audio.currentTime = 0;
-
     window.location.href = 'index.html';
 });
 
