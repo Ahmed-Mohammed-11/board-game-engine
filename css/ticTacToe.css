@@ -1,0 +1,83 @@
+/* style the game board */
+table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border: 2px solid black;
+    /* background-color: rgb(11, 30, 21); */
+}
+
+td {
+border: none;
+width: 100px;
+height: 100px;
+text-align: center;
+vertical-align: middle;
+border-radius: 5px;
+}
+
+/* center the table horizontally */
+table {
+margin: 0 auto;
+}
+
+/* center the table vertically */
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+}
+
+/* style the X's and O's */
+.x {
+color: rgb(20, 193, 46);
+font-family: 'Comic Sans MS', sans-serif;
+text-shadow: 1px 1px gray;
+}
+
+.o {
+color: blue;
+font-family: 'Impact', sans-serif;
+text-shadow: 1px 1px gray;
+}
+
+/* add hover effect to cells */
+td:hover {
+background-color: rgb(55, 162, 180);
+transition: background-color 0.5s ease-in-out;
+}
+
+/* add a background image or gradient to the page */
+body {
+    background-image: url('../img/il_fullxfull.3037721964_hcum.jpg');
+    background-size: cover;
+    background-position: center;
+    /* background-color: blueviolet; */
+}
+td {
+border: 1px solid rgb(250, 245, 245);
+}
+
+/* make the text in the cells larger */
+td {
+font-size: 36px;
+}
+.startBtn{
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #57856c;
+    color: #d0d0d0;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.45);
+    padding: 10px 30px;
+    font-size: 40px;
+    width: 200px;
+    height: 100px;
+    border : 2px solid rgba(54, 41, 41, 0.55);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+  }
