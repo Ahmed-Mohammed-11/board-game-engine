@@ -1,156 +1,156 @@
-function turningToString(grid){
+class generator{     turningToString(grid){
     let myArray = [];
     for (let i = 0 ;i < 9 ;i++){
-        myArray[i] = [];
-        for (let j = 0 ;j < 9;j++){
-            if (grid[i][j] === 0){
-                myArray[i][j] = '';
-            }else {
-            myArray[i][j] = grid[i][j].toString();
-            }
+    myArray[i] = [];
+    for (let j = 0 ;j < 9;j++){
+        if (grid[i][j] === 0){
+            myArray[i][j] = '';
+        }else {
+        myArray[i][j] = grid[i][j].toString();
         }
+    }
     }
     return myArray;
 
-}
-function generateSudoku() {
+    }
+     generateSudoku() {
     // Create an empty 9x9 grid
     let grid = [];
     for (let i = 0; i < 9; i++) {
-        grid[i] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    grid[i] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     }
-    
+
     // Fill the diagonal sub-grids with random numbers
-    fillDiagonalSubGrids(grid);
-    
+    this.fillDiagonalSubGrids(grid);
+
     // Fill the remaining cells
-    fillRemainingCells(grid, 0, 3);
-    
+    this.fillRemainingCells(grid, 0, 3);
+
     // Remove some numbers to create the puzzle
-    removeNumbers(grid);
-    
-    let myArray =  turningToString(grid);
-    
-    
+    this.removeNumbers(grid);
+
+    let myArray =  this.turningToString(grid);
+
+
     return myArray;
     }
-    
-function fillDiagonalSubGrids(grid) {
+
+     fillDiagonalSubGrids(grid) {
     for (let i = 0; i < 9; i += 3) {
-        this.fillSubGrid(grid, i, i);
+    this.fillSubGrid(grid, i, i);
     }
     }
-    
-function fillSubGrid(grid, row, col) {
+
+     fillSubGrid(grid, row, col) {
     let nums = this.shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-    
+
     for (let i = 0; i < 3; i++) {
-        for (let j = 0; j < 3; j++) {
-        grid[row + i][col + j] = nums.pop();
+    for (let j = 0; j < 3; j++) {
+    grid[row + i][col + j] = nums.pop();
+    }
+    }
+    }
+
+     shuffle(array) {
+    for (let i = array.length -1; i >0 ;i--){
+        let j = Math.floor(Math.random() * (i+1));
+        [array[i],array[j]] = [array[j],array[i]];
+    }
+    return array;
+    }
+
+     fillRemainingCells(grid,row,col){
+    if(col>=9 && row<8){
+        row=row+1;
+        col=0;
+    }
+    if(row>=9 && col>=9){
+        return true;
+    }
+    if(row<3){
+        if(col<3){
+            col=3;
         }
-    }
-    }
-    
-function shuffle(array) {
-        for (let i = array.length -1; i >0 ;i--){
-            let j = Math.floor(Math.random() * (i+1));
-            [array[i],array[j]] = [array[j],array[i]];
+    }else if(row<6){
+        if(col===parseInt(row/3)*3){
+            col+=3;
         }
-        return array;
-    }
-    
-function fillRemainingCells(grid,row,col){
-        if(col>=9 && row<8){
-            row=row+1;
+    }else{
+        if(col===6){
+            row+=1;
             col=0;
+            if(row>=9){
+                return true;
+            }
         }
-        if(row>=9 && col>=9){
+    }
+
+    for(let num=1;num<=9;num++){
+        if(this.isSafe(grid,row,col,num)){
+            grid[row][col]=num;
+            if(this.fillRemainingCells(grid,row,col+1)){
+                return true;
+            }
+            grid[row][col]=0;
+        }
+    }
+    return false;
+    }
+
+     isSafe(grid,row,col,num){
+    return !this.usedInRow(grid,row,num) && !this.usedInCol(grid,col,num) && !this.usedInBox(grid,row-row%3,col-col%3,num);
+    }
+
+      usedInRow(grid,row,num){
+    for(let col=0;col<9;col++){
+        if(grid[row][col]===num){
             return true;
         }
-        if(row<3){
-            if(col<3){
-                col=3;
-            }
-        }else if(row<6){
-            if(col===parseInt(row/3)*3){
-                col+=3;
-            }
-        }else{
-            if(col===6){
-                row+=1;
-                col=0;
-                if(row>=9){
-                    return true;
-                }
-            }
-        }
-        
-        for(let num=1;num<=9;num++){
-            if(this.isSafe(grid,row,col,num)){
-                grid[row][col]=num;
-                if(this.fillRemainingCells(grid,row,col+1)){
-                    return true;
-                }
-                grid[row][col]=0;
-            }
-        }
-        return false;
     }
-    
-function isSafe(grid,row,col,num){
-        return !this.usedInRow(grid,row,num) && !this.usedInCol(grid,col,num) && !this.usedInBox(grid,row-row%3,col-col%3,num);
+    return false;
     }
-    
-function  usedInRow(grid,row,num){
-        for(let col=0;col<9;col++){
-            if(grid[row][col]===num){
+
+     usedInCol(grid,col,num){
+    for(let row=0;row<9;row++){
+        if(grid[row][col]===num){
+            return true;
+        }
+    }
+    return false;
+    }
+
+     usedInBox(grid,startRow,startCol,num){
+    for(let row=0;row<3;row++){
+        for(let col=0;col<3;col++){
+            if(grid[row+startRow][col+startCol]===num){
                 return true;
             }
         }
-        return false;
     }
-    
-function usedInCol(grid,col,num){
-        for(let row=0;row<9;row++){
-            if(grid[row][col]===num){
-                return true;
-            }
+    return false;
+    }
+
+     removeNumbers(grid) {
+    let count = Math.floor(Math.random() * (55 -45)) +45 ;
+    while(count!=0){
+        let cellId = Math.floor(Math.random()*81);
+        let row = Math.floor(cellId/9);
+        let col = cellId%9;
+        while(grid[row][col]==0){
+            cellId = Math.floor(Math.random()*81);
+            row = Math.floor(cellId/9);
+            col = cellId%9;
         }
-        return false;
-    }
-    
-function usedInBox(grid,startRow,startCol,num){
-        for(let row=0;row<3;row++){
-            for(let col=0;col<3;col++){
-                if(grid[row+startRow][col+startCol]===num){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-    
-function removeNumbers(grid) {
-        let count = Math.floor(Math.random() * (55 -45)) +45 ;
-        while(count!=0){
-            let cellId = Math.floor(Math.random()*81);
-            let row = Math.floor(cellId/9);
-            let col = cellId%9;
-            while(grid[row][col]==0){
-                cellId = Math.floor(Math.random()*81);
-                row = Math.floor(cellId/9);
-                col = cellId%9;
-            }
-            let backup = grid[row][col];
-            grid[row][col]=0;
-            count--;
-        } 
-}
+        let backup = grid[row][col];
+        grid[row][col]=0;
+        count--;
+    } 
+    }}
 class Sudoku extends GameEngine{
     //place your js code here
     constructor(){
-        
-        let arr0= generateSudoku();
+        let g = new generator();
+        let arr0= g.generateSudoku();
         let arr1 = JSON.parse(JSON.stringify(arr0));
         let arr = [];
         arr[0] = arr0;
