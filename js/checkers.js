@@ -15,10 +15,10 @@ class Checkers extends GameEngine{
     
     checkInput(str) {
         if (str.length < 5) return false;
-        let from1 = str.charAt(0);
-        let from2 = str.charAt(1);
-        let to1 = str.charAt(3);
-        let to2 = str.charAt(4);
+        let from1 = str.charAt(0)-1;
+        let from2 = str.charAt(1)-1;
+        let to1 = str.charAt(3)-1;
+        let to2 = str.charAt(4)-1;
         return !isNaN(from1) && !isNaN(from2) && !isNaN(to1)&& !isNaN(to2)
         &&  from2 >= 0 && from2 <= 7 && from1 >= 0 && from1 <= 7
         &&  to2 >= 0 && to2 <= 7 && to1 >= 0 && to1 <= 7;
