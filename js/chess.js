@@ -1,5 +1,6 @@
 class Chess extends GameEngine {
   constructor() {
+    //initial state
     let state = [
       ['black rook', 'black knight', 'black bishop', 'black queen', 'black king', 'black bishop', 'black knight', 'black rook'],
       ['black pawn', 'black pawn', 'black pawn', 'black pawn', 'black pawn', 'black pawn', 'black pawn', 'black pawn'],
@@ -62,6 +63,23 @@ class Chess extends GameEngine {
   }
 
   controller(state, input) {
+    if(input.length == 5)
+    {
+        if(input[2] != " ") 
+        {
+            return {
+                state: state,
+                valid: false
+            };
+        }
+    }
+    else
+    {
+        return {
+            state: state,
+            valid: false
+        };
+    }
     //source to integer
     let sourceRow = parseInt(input.split(" ")[0].split("")[0]);
     let sourceColumn = parseInt(input.split(" ")[0].split("")[1]);

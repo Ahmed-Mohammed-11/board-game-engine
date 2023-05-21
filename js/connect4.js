@@ -1,5 +1,6 @@
 class Connect4 extends GameEngine{
     constructor() {
+        //initial state
         let state = [
             [0, 0, 0 , 0, 0 , 0, 0],
             [0, 0, 0 , 0, 0 , 0, 0],
@@ -47,6 +48,24 @@ class Connect4 extends GameEngine{
 
 
     controller(state, input) {
+        //checks the input if it's valid or not
+        if(input.length == 3)
+        {
+            if(input[1] != " ") 
+            {
+                return {
+                    state: state,
+                    valid: false
+                };
+            }
+        }else{
+            return {
+                state: state,
+                valid: false
+            };
+        }
+
+        
         let valid = false;
         let row = parseInt(input.split(" ")[0]);
         let column = parseInt(input.split(" ")[1]);

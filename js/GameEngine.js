@@ -1,25 +1,43 @@
 class GameEngine {
-  update (state) {
-      this.drawer(state);
-      setTimeout(() => {
-              let input = prompt("Enter the input:");
-              if(input === "exit"){
-                  return;
-              }
-              let result = this.controller(state, input);
-              if (result.valid) {
+    update (state) {
+
+        this.drawer(state);
+        setTimeout(() => 
+        {
+                //get the input from the user
+                let input = prompt("Enter the input:");
+                //exit the game if the user enter exit
+                if(input === "exit")
+                {
+                    return;
+                }
+                let result = this.controller(state, input);
+                //if the input is valid the call the drawer function to draw the new state
+                if (result.valid) 
+                {
                     this.drawer(state);
-              } else {
-                  console.log('not valid input');
-              }
-              this.update(state)
-      }, 500)
+                }
+                else if(result.valid === false && input === "solve") 
+                {
+                    alert("Can't find a  solution");
+                //if the input is not valid alert user that the input is not valid
+                } 
+                else
+                {
+                    alert("Invalid input");
+                    console.log('not valid input');
+                }
+                //call update function again recursively
+                this.update(state)
+        }, 500);
 
   }
-  constructor(state) {
-    // setInterval(this.update.bind(this , state) , 100);
+  constructor(state) 
+  {
+      //call update function
       this.update(state);
   }
+  //just a definition for functions controller and drawer
   controller(state , input){}
   drawer(state){}
 }
